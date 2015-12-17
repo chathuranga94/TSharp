@@ -103,7 +103,45 @@ namespace TSharpClient
             return path;
         }
 
+        public static String getMove()
+        {
 
+            coinLocations.Add(11);
+            //Find the closest coin
+            int currentLoc = playerLocatoin;
+            int minLoc = currentLoc;
+            int minsDist = 100;
+            foreach (dynamic coinLoc in coinLocations)
+            {
+                int dist = getPath(currentLoc, coinLoc).Count;
+                if (dist < minsDist)
+                {
+                    minLoc = coinLoc;
+                    minsDist = dist;
+                }
+            }
+
+
+            if (minsDist == 100) return "SHOOT#";
+
+            int from = playerLocatoin;
+            int to = minLoc;
+
+            List<int> path = getPath(from, to);
+
+            if (path == null || path.Count == 0)
+            {
+                Console.WriteLine("Error:" + from + " " + to);
+                return "SHOOT#";
+            }
+
+            Console.WriteLine(path[0]);
+
+            if (path[0] - from == 10) return "RIGHT#";
+            if (path[0] - from == -10) return "LEFT#";
+            if (path[0] - from == 1) return "DOWN#";
+            else return "UP#";
+        }
 
     }
 }
