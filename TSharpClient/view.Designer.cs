@@ -137,6 +137,7 @@
             this.btnSHOOT = new System.Windows.Forms.Button();
             this.lblCMD = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1362,11 +1363,22 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(606, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 56);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 631);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblCMD);
             this.Controls.Add(this.btnSHOOT);
@@ -1494,5 +1506,6 @@
         private System.Windows.Forms.Button btnSHOOT;
         private System.Windows.Forms.Label lblCMD;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }

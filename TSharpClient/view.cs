@@ -194,6 +194,14 @@ namespace TSharpClient
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            String data = "G:P2;2,3;2;0;75;100;1000:P1;1,2;1;0;45;200:";
+
+
+        }
+
     }
 
 }

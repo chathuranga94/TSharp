@@ -15,6 +15,8 @@ namespace TSharpClient
             view v1 = new view();
             v1.ShowDialog();
 
+            Console.WriteLine("fdf");
+
             /*
            connect con = new connect();
            con.send("JOIN#");
