@@ -136,7 +136,7 @@ namespace TSharpClient
             }
 
             Console.WriteLine(path[0]);
-
+            //choosing the side to turn
             if (path[0] - from == 10) return "RIGHT#";
             if (path[0] - from == -10) return "LEFT#";
             if (path[0] - from == 1) return "DOWN#";
