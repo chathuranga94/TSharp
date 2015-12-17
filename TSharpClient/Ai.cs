@@ -142,6 +142,12 @@ namespace TSharpClient
             if (path[0] - from == 1) return "DOWN#";
             else return "UP#";
         }
+        public static void move()
+        {
+            String msg = getMove();
+            Console.WriteLine(msg);
+            netClient.send(msg);
+        }
 
     }
 }
