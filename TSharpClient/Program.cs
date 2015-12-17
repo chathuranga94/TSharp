@@ -19,12 +19,6 @@ namespace TSharpClient
             view v1 = new view();
             v1.ShowDialog();
 
-<<<<<<< HEAD
-=======
-            List<int> path = AI.getPath(0,99);
-            Console.WriteLine("fdf");
-
->>>>>>> 0da3320da737a592d1f4005c5a967ddbddbe8236
             /*
            connect con = new connect();
            con.send("JOIN#");

@@ -21,6 +21,8 @@ namespace TSharpClient
             InitializeComponent();
 
             connect con = new connect(this);
+            /////////
+            AI.netClient = con;
             con.send("JOIN#");
             con.listen();
         }

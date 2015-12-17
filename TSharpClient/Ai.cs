@@ -9,6 +9,7 @@ namespace TSharpClient
     class AI
     {
        // hard coded array
+        /*
         public static string[,] game = new string[10, 10]
         {   {"O0","","","","","","","","",""},
             {"","","","","","","","W","",""},
@@ -20,9 +21,12 @@ namespace TSharpClient
             {"","W","W","","","B","","","",""},
             {"W","","","","","B","B","W","","S"},
             {"","","","P3","","","","","",""}  };
+        */
+
+
 
         public static int playerLocatoin=0;
-        public static List<int> coinLocations;
+        //public static List<int> coinLocations;
         public static connect netClient;
 
 
@@ -44,33 +48,24 @@ namespace TSharpClient
                 int block = queue.Dequeue();
                 int i = block / 10, j = block % 10;
 
-                if (game[j, i] == "W" || game[j, i] == "S" || game[j, i] == "B")
+                if (parser.game[i, j] == "W" || parser.game[i, j] == "S" || parser.game[i, j] == "B")
                 {
                     parents[block] = -2;
                     continue;//do no add childs if it is a blocked cell
                 }
 
-                if (i > 0)
-                {
-                    int tmp = (i - 1) * 10 + j;
-                    if (parents[tmp] == -1)
-                    {
-                        parents[tmp] = block;
-                        queue.Enqueue(tmp);
-                    }
-                }
                 if (j > 0)
                 {
-                    int tmp = (i) * 10 + j - 1;
+                    int tmp = (j - 1) * 10 + i;
                     if (parents[tmp] == -1)
                     {
                         parents[tmp] = block;
                         queue.Enqueue(tmp);
                     }
                 }
-                if (i < 9)
+                if (i > 0)
                 {
-                    int tmp = (i + 1) * 10 + j;
+                    int tmp = (j) * 10 + i - 1;
                     if (parents[tmp] == -1)
                     {
                         parents[tmp] = block;
@@ -79,7 +74,16 @@ namespace TSharpClient
                 }
                 if (j < 9)
                 {
-                    int tmp = (i) * 10 + j + 1;
+                    int tmp = (j + 1) * 10 + i;
+                    if (parents[tmp] == -1)
+                    {
+                        parents[tmp] = block;
+                        queue.Enqueue(tmp);
+                    }
+                }
+                if (i < 9)
+                {
+                    int tmp = (j) * 10 + i + 1;
                     if (parents[tmp] == -1)
                     {
                         parents[tmp] = block;
@@ -102,16 +106,14 @@ namespace TSharpClient
             path.Reverse();
             return path;
         }
-
         public static String getMove()
         {
-
-            coinLocations.Add(11);
+            //coinLocations.Add(11);
             //Find the closest coin
             int currentLoc = playerLocatoin;
             int minLoc = currentLoc;
             int minsDist = 100;
-            foreach (dynamic coinLoc in coinLocations)
+            foreach (dynamic coinLoc in parser.coins)
             {
                 int dist = getPath(currentLoc, coinLoc).Count;
                 if (dist < minsDist)
