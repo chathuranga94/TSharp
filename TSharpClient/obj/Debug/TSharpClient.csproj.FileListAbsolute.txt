@@ -6,3 +6,11 @@ c:\users\chath_000\documents\visual studio 2013\Projects\TSharpClient\TSharpClie
 c:\users\chath_000\documents\visual studio 2013\Projects\TSharpClient\TSharpClient\obj\Debug\TSharpClient.pdb
 c:\users\chath_000\documents\visual studio 2013\Projects\TSharpClient\TSharpClient\obj\Debug\TSharpClient.view.resources
 c:\users\chath_000\documents\visual studio 2013\Projects\TSharpClient\TSharpClient\obj\Debug\TSharpClient.csproj.GenerateResource.Cache
+E:\Semester 4\PC2\TSharp\TSharpClient\bin\Debug\TSharpClient.exe.config
+E:\Semester 4\PC2\TSharp\TSharpClient\obj\Debug\TSharpClient.exe
+E:\Semester 4\PC2\TSharp\TSharpClient\obj\Debug\TSharpClient.pdb
+E:\Semester 4\PC2\TSharp\TSharpClient\bin\Debug\TSharpClient.exe
+E:\Semester 4\PC2\TSharp\TSharpClient\bin\Debug\TSharpClient.pdb
+E:\Semester 4\PC2\TSharp\TSharpClient\obj\Debug\TSharpClient.csprojResolveAssemblyReference.cache
+E:\Semester 4\PC2\TSharp\TSharpClient\obj\Debug\TSharpClient.view.resources
+E:\Semester 4\PC2\TSharp\TSharpClient\obj\Debug\TSharpClient.csproj.GenerateResource.Cache
