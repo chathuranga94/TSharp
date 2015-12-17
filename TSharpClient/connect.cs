@@ -52,47 +52,61 @@ namespace TSharpClient
         {
             thread = new Thread(new ThreadStart(receiveData));
             thread.Start();
+            Console.WriteLine("Connect.listen() recievings");
         }
 
         public void receiveData()
         {
             try
             {
+                Console.WriteLine("Recieve Data Running");
                 TcpListener listner = new TcpListener(IPAddress.Parse("127.0.0.1"), 7000);
                 string msg = null;
                 listner.Start();
+                parser p2 = new parser();
                 while (true)
                 {
-                    Socket s = listner.AcceptSocket();
-                    if (s.Connected)
+                    try
                     {
-                        NetworkStream stream = new NetworkStream(s);
-                        List<Byte> inputStr = new List<byte>();
-                        //Console.WriteLine("connected to server");
-                        int asw = 0;
-                        while (asw != -1)
+                        Socket s = listner.AcceptSocket();
+                        if (s.Connected)
                         {
-                            asw = stream.ReadByte();
-                            inputStr.Add((Byte)asw);
+                            NetworkStream stream = new NetworkStream(s);
+                            List<Byte> inputStr = new List<byte>();
+                            int asw = 0;
+                            while (asw != -1)
+                            {
+                                asw = stream.ReadByte();
+                                inputStr.Add((Byte)asw);
+                            }
+
+                            msg = Encoding.UTF8.GetString(inputStr.ToArray());
+                            //Console.WriteLine(reply);
+                            //stream.Close();
+                            //listner .Stop();
+                            //gameViwe.drow(msg);
+                            p2.evaluate(msg);
                         }
+                        //Console.WriteLine(msg);
+                        
 
-                        msg = Encoding.UTF8.GetString(inputStr.ToArray());
-                        //Console.WriteLine(reply);
-                        stream.Close();
-                        //listner.Stop();
-
-                        gameViwe.drow(msg);
                     }
-                    System.Console.WriteLine(msg);
-                    return ;
+                    catch
+                    {
+                        //Console.WriteLine("Error");
+                    }
+                    
                 }
             }
             catch
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("Error- Finished");
                 return ;
             }
+            //listner.Stop();
         }
+
+       
 
 
 

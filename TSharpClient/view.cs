@@ -34,6 +34,7 @@ namespace TSharpClient
                 this.Invoke(d, new object[] { msg });
             }
             lblCMD.Text+= msg;
+            //Console.WriteLine(msg);
         }
         
 
@@ -200,6 +201,11 @@ namespace TSharpClient
             String data = "G:P2;2,3;2;0;75;100;1000:P1;1,2;1;0;45;200:";
 
 
+        }
+
+        private void lblCMD_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }

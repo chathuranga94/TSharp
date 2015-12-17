@@ -1351,6 +1351,7 @@
             this.lblCMD.Size = new System.Drawing.Size(679, 36);
             this.lblCMD.TabIndex = 19;
             this.lblCMD.Text = "Command";
+            this.lblCMD.Click += new System.EventHandler(this.lblCMD_Click);
             // 
             // button4
             // 
