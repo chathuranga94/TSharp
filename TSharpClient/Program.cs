@@ -15,6 +15,7 @@ namespace TSharpClient
             view v1 = new view();
             v1.ShowDialog();
 
+            List<int> path = AI.getPath(0,99);
             Console.WriteLine("fdf");
 
             /*
