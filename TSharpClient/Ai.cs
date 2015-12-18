@@ -54,27 +54,18 @@ namespace TSharpClient
                     continue;//no children to blocked cells
                 }
 
+                if (i > 0)//left side
+                {
+                    int tmp = (i - 1) * 10 + j;
+                    if (parents[tmp] == -1)
+                    {
+                        parents[tmp] = block;
+                        queue.Enqueue(tmp);
+                    }
+                }
                 if (j > 0)
                 {
-                    int tmp = (j - 1) * 10 + i;
-                    if (parents[tmp] == -1)
-                    {
-                        parents[tmp] = block;
-                        queue.Enqueue(tmp);
-                    }
-                }
-                if (i > 0)
-                {
-                    int tmp = (j) * 10 + i - 1;
-                    if (parents[tmp] == -1)
-                    {
-                        parents[tmp] = block;
-                        queue.Enqueue(tmp);
-                    }
-                }
-                if (j < 9)
-                {
-                    int tmp = (j + 1) * 10 + i;
+                    int tmp = (i) * 10 + j - 1;//up
                     if (parents[tmp] == -1)
                     {
                         parents[tmp] = block;
@@ -83,7 +74,16 @@ namespace TSharpClient
                 }
                 if (i < 9)
                 {
-                    int tmp = (j) * 10 + i + 1;
+                    int tmp = (i + 1) * 10 + j;//right
+                    if (parents[tmp] == -1)
+                    {
+                        parents[tmp] = block;
+                        queue.Enqueue(tmp);
+                    }
+                }
+                if (j < 9)
+                {
+                    int tmp = (i) * 10 + j + 1;//down
                     if (parents[tmp] == -1)
                     {
                         parents[tmp] = block;
@@ -108,8 +108,6 @@ namespace TSharpClient
         }
         public static String getMove()
         {
-
-
             int currentLoc = playerLocatoin;
             int minLoc = currentLoc;
             int minsDist = 100;
