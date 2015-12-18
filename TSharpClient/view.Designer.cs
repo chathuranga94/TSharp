@@ -1144,6 +1144,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 49);
             this.label14.TabIndex = 13;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label13
             // 

@@ -11,12 +11,13 @@ namespace TSharpClient
     {
         static void Main(string[] args)
         {
+            parser p1 = new parser();
+            //p1.createMap();
+            //p1.printMap();
+            Console.Read();
 
             view v1 = new view();
             v1.ShowDialog();
-
-            List<int> path = AI.getPath(0,99);
-            Console.WriteLine("fdf");
 
             /*
            connect con = new connect();
