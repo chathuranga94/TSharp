@@ -30,12 +30,12 @@ namespace TSharpClient
         {
             List<int> path = new List<int>();
 
-            //Mark cells unvisited | when we visit them, mark with parent cell's id
+            // mark cells with parent cells id
             int[] parents = new int[100];
             for (int i = 0; i < 100; i++)
                 parents[i] = -1;
 
-            //Queue to enque tmperol cells
+           
             Queue<int> queue = new Queue<int>();
             queue.Enqueue(from);
 
@@ -47,7 +47,7 @@ namespace TSharpClient
                 if (game[j, i] == "W" || game[j, i] == "S" || game[j, i] == "B")
                 {
                     parents[block] = -2;
-                    continue;//do no add childs if it is a blocked cell
+                    continue;//no children to blocked cells
                 }
 
                 if (i > 0)
@@ -88,7 +88,7 @@ namespace TSharpClient
                 }
             }
 
-            //Return null if we can't find a possible path
+            //null if no path
             if (parents[to] < 0) return path;
 
 
@@ -107,7 +107,7 @@ namespace TSharpClient
         {
 
             coinLocations.Add(11);
-            //Find the closest coin
+            //Finding the closest coin
             int currentLoc = playerLocatoin;
             int minLoc = currentLoc;
             int minsDist = 100;
@@ -136,7 +136,7 @@ namespace TSharpClient
             }
 
             Console.WriteLine(path[0]);
-            //choosing the side to turn
+            //choosing which side to turn
             if (path[0] - from == 10) return "RIGHT#";
             if (path[0] - from == -10) return "LEFT#";
             if (path[0] - from == 1) return "DOWN#";
