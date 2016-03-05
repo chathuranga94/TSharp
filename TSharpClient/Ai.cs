@@ -112,7 +112,9 @@ namespace TSharpClient
         }
         public static String getMove()
         {
+            
             int currentLoc = playerLocation;
+         
             int minLoc = currentLoc;
             int minsDist = 100;
             foreach (dynamic coinLoc in parser.coins)
@@ -152,6 +154,8 @@ namespace TSharpClient
         public static void move()// sending msg to the net client
         {
             String msg = getMove();
+            
+               
 
             Console.WriteLine(msg);
 
