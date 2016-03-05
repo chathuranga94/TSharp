@@ -25,9 +25,12 @@ namespace TSharpClient
 
 
 
-        public static int playerLocatoin=0;
+        public static int playerLocation=0;
         //public static List<int> coinLocations;
-        public static connect netClient;
+        static view v;
+        //public  static connect netClient; --------------i added next line instead this
+        static connect netClient = new connect(v);
+        
 
 
         public static List<int> getPath(int from, int to)
@@ -108,7 +111,7 @@ namespace TSharpClient
         }
         public static String getMove()
         {
-            int currentLoc = playerLocatoin;
+            int currentLoc = playerLocation;
             int minLoc = currentLoc;
             int minsDist = 100;
             foreach (dynamic coinLoc in parser.coins)
@@ -124,7 +127,7 @@ namespace TSharpClient
 
             if (minsDist == 100) return "SHOOT#";
 
-            int from = playerLocatoin;
+            int from = playerLocation;
             int to = minLoc;
 
             List<int> path = getPath(from, to);
@@ -134,6 +137,9 @@ namespace TSharpClient
                 Console.WriteLine("Error:" + from + " " + to);
                 return "SHOOT#";
             }
+            /////// ravi added this
+            Console.WriteLine(path);
+            ////////////
 
             Console.WriteLine(path[0]);
             //choosing which side to turn
@@ -142,7 +148,7 @@ namespace TSharpClient
             if (path[0] - from == 1) return "DOWN#";
             else return "UP#";
         }
-        public static void move()
+        public static void move()// sending msg to the net client
         {
             String msg = getMove();
             Console.WriteLine(msg);

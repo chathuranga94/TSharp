@@ -15,6 +15,7 @@ namespace TSharpClient
             //p1.createMap();
             //p1.printMap();
             Console.Read();
+            Console.WriteLine(parser.game);
 
             view v1 = new view();
             v1.ShowDialog();

@@ -104,6 +104,13 @@ namespace TSharpClient
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
+            
+            
             //set("S:P1:4,6:1#");
 
             String cmd = "I:P1:2,3;3,4:4,4;5,5:6,7;9,9";
@@ -169,7 +176,7 @@ namespace TSharpClient
         {
             connect co = new connect(this);
             co.send("SHOOT#");
-        }
+        } 
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -205,6 +212,11 @@ namespace TSharpClient
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+              
         }
 
     }

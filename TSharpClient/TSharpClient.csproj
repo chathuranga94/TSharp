@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="connect.cs" />
+    <Compile Include="MessageManager.cs" />
     <Compile Include="parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

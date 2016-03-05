@@ -49,7 +49,6 @@
             this.label83 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -138,6 +137,7 @@
             this.lblCMD = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label80 = new System.Windows.Forms.Label();
             this.tbl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -472,16 +472,6 @@
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(50, 49);
             this.label81.TabIndex = 80;
-            // 
-            // label80
-            // 
-            this.label80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(507, 343);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(52, 49);
-            this.label80.TabIndex = 79;
             // 
             // label79
             // 
@@ -1004,6 +994,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(50, 49);
             this.label28.TabIndex = 27;
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label27
             // 
@@ -1374,6 +1365,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label80
+            // 
+            this.label80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(507, 343);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(52, 49);
+            this.label80.TabIndex = 79;
+            // 
             // view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1419,7 +1420,6 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label77;
@@ -1508,5 +1508,6 @@
         private System.Windows.Forms.Label lblCMD;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label80;
     }
 }

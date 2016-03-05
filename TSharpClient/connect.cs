@@ -15,11 +15,11 @@ namespace TSharpClient
     class connect
     {
         Thread thread;
-        view gameViwe;
+        view gameView;
 
         public connect(view v)
         {
-            gameViwe = v;
+            gameView = v;
         }
        
         public void send(String cmd) {
@@ -88,6 +88,7 @@ namespace TSharpClient
                             p2.evaluate(msg);
                         }
                         //Console.WriteLine(msg);
+                        gameView.ShowDialog();
                         
 
                     }
