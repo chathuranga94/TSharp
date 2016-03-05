@@ -3,37 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace TSharpClient
 {
     class MessageManager
     {
-        String msg;
+     
         TimeSpan timeDuration;
-        TimeSpan sentTime;
-        connect con;
+        TimeSpan sentTime = new TimeSpan(0,0,0,0,0);
+        static view v;
+        static connect con = new connect(v);
         bool sent;
-        public MessageManager(connect con)
-        {
-            timeDuration = new TimeSpan(0,0,0,1,0);
-            this.con = con;
-        }
+        String msg;
 
-        public void refresh(TimeSpan t)
+     /**   public MessageManager(connect con)
         {
-            if ((t - sentTime) > timeDuration)
-            {
+            timeDuration = new TimeSpan(0,0,0,0,1000);
+            this.con = con;
+        }**/
+
+        public void send()
+        {          
                 con.send(msg);
                 sent = true;
-            }
-
         }
 
         public void setMessage(String msg)
         {
             this.msg = msg;
-            sent = false;
         }
+
 
     }
 }

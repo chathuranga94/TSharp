@@ -56,7 +56,7 @@ namespace TSharpClient
         }
 
         public void receiveData()
-        {
+        { 
             try
             {
                 Console.WriteLine("Recieve Data Running");

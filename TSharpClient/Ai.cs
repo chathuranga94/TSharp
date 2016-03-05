@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace TSharpClient
 {
@@ -151,8 +152,16 @@ namespace TSharpClient
         public static void move()// sending msg to the net client
         {
             String msg = getMove();
+
             Console.WriteLine(msg);
-            netClient.send(msg);
+
+           MessageManager msgManager = new MessageManager();
+           msgManager.setMessage(msg);
+           Thread msgManagerThread = new Thread(msgManager.send);
+           msgManagerThread.Start();
+           Thread.Sleep(1000);
+             // netClient.send(msg);
+
         }
 
     }
